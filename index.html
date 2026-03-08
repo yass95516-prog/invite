@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<style>
+body{
+margin:0;
+background:linear-gradient(to bottom, #fdfaf5, #fff);
+font-family:'Cormorant Garamond', serif;
+color:#2c2c2c;
+text-align:center;
+overflow-x:hidden;
+position:relative;
+}
+  
+/* Invitation Frame */
+.invitation-frame {
+  max-width:900px;
+  margin:50px auto;
+  padding:30px;
+  border:6px solid #d4af37; /* Gold border */
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  background:rgba(255,255,255,0.95);
+  position:relative;
+  z-index:1;
+}
+  
+  
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+z-index:1;
+}
+
+.hero h1{
+font-family:'Playfair Display', serif;
+font-size:70px;
+letter-spacing:3px;
+margin:0;
+}
+
+.hero p{
+font-size:20px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#777;
+margin:0;
+}
+
+.open-btn{
+margin-top:40px;
+padding:15px 45px;
+border:1px solid #d4af37;
+background:white;
+color:#d4af37;
+font-size:16px;
+letter-spacing:3px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.open-btn:hover{
+background:#d4af37;
+color:white;
+}
+
+/* Sections */
+.section{
+padding:80px 20px;
+max-width:850px;
+margin:auto;
+position:relative;
+z-index:1;
+}
+
+  .section-divider {
+    height : 1px;
+    width : 60%;
+    background: #d4af37;
+    margin : 50px auto 50px auto;
+    border-radius : 1px;
+  }
+.names{
+font-family:'Playfair Display', serif;
+font-size:48px;
+letter-spacing:2px;
+margin:40px 0;
+}
+
+.divider{
+width:120px;
+height:1px;
+background:#d4af37;
+margin:40px auto;
+}
+
+.details{
+font-size:22px;
+margin:10px 0;
+color:#4a4a4a;
+}
+
+.countdown{
+font-size:26px;
+margin-top:20px;
+}
+
+/* Timeline */
+.timeline{
+text-align:left;
+margin-top:50px;
+}
+
+.timeline div{
+margin-bottom:20px;
+}
+
+/* RSVP */
+.rsvp input, .rsvp textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+font-family:'Cormorant Garamond', serif;
+}
+
+.rsvp button{
+padding:14px 40px;
+background:#d4af37;
+border:none;
+color:white;
+letter-spacing:2px;
+cursor:pointer;
+}
+
+/* MAP */
+.map{
+margin-top:60px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,0.15);
+}
+
+/* Floating Flowers */
+.petal{
+position:fixed;
+top:-10%;
+opacity:0.5;
+animation:fall linear infinite;
+z-index:0;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+ <div class="invitation-frame">
+  
+  
+  
+<!-- HERO -->
+<div class="hero">
+<p>You are invited</p>
+<h1>Our Wedding</h1>
+<button class="open-btn" onclick="scrollToSection()">Open Invitation</button>
+</div>
+<div class="section-divider"></div>
+   
+<!-- Couple Names -->
+<div class="section">
+<div class="names">
+Marouen Khemiri<br>&<br>Yasmine Fehri
+</div>
+<div class="divider"></div>
+<p>Together with their families, they invite you to celebrate their marriage.</p>
+</div>
+<div class="section-divider"></div>
+<!-- Date -->
+<div class="section">
+<h2>September 12, 2026</h2>
+<div class="countdown" id="countdown"></div>
+</div>
+<div class="section-divider"></div>
+<!-- Timeline -->
+<div class="section">
+<h2>Wedding Day</h2>
+<div class="timeline">
+<div><b>5:00 PM</b> – Ceremony</div>
+<div><b>5:30 PM</b> – Cocktail Reception</div>
+</div>
+</div>
+<div class="section-divider"></div>
+<!-- Location -->
+<div class="section">
+<h2>Location</h2>
+<p>Hôtel de Ville de Tunis<br>La Kasbah, Tunisia</p>
+<div class="map">
+<iframe
+width="100%"
+height="350"
+style="border:0"
+loading="lazy"
+allowfullscreen
+src="https://www.google.com/maps?q=2 Rue du 2 Mars 1934, Tunis 1000&output=embed">
+</iframe>
+</div>
+</div>
+<div class="section-divider"></div>
+<!-- RSVP Form (Formspree Integration) -->
+<div class="section rsvp">
+<h2>RSVP</h2>
+<form action="https://formspree.io/f/mlgpdzkd" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="number" name="guests" placeholder="Number of Guests" required>
+<textarea name="message" placeholder="Message"></textarea>
+<button type="submit">Confirm Attendance</button>
+</form>
+</div>
+
+<script>
+/* Smooth scroll */
+function scrollToSection(){window.scrollTo({top:window.innerHeight,behavior:'smooth'});}
+
+/* Countdown Timer */
+const weddingDate = new Date("June 20, 2027 16:00:00").getTime();
+setInterval(()=>{
+const now = new Date().getTime();
+const distance = weddingDate - now;
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+document.getElementById("countdown").innerHTML = days+" days "+hours+" hours "+minutes+" minutes";
+},1000);
+
+/* Floating Flowers */
+const petals=["❀","🌸","✿","💮"];
+function createPetal(){
+const p=document.createElement("div");
+p.classList.add("petal");
+p.innerHTML=petals[Math.floor(Math.random()*petals.length)];
+p.style.left=Math.random()*100+"vw";
+p.style.fontSize=(18+Math.random()*22)+"px";
+p.style.animationDuration=(20+Math.random()*20)+"s";
+p.style.color=["#fff","#f8e3e0","#d4af37","#c8d8c8"][Math.floor(Math.random()*4)];
+document.body.appendChild(p);
+setTimeout(()=>p.remove(),40000);
+}
+setInterval(createPetal,800);
+</script>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
