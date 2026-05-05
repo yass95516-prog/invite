@@ -1,155 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Wedding Invitation</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&family=Amiri&display=swap" rel="stylesheet">
+
 <style>
-body{
+
+/* ===== RESET ===== */
+*{
 margin:0;
-background:linear-gradient(to bottom, #fdfaf5, #fff);
-font-family:'Cormorant Garamond', serif;
-color:#2c2c2c;
-text-align:center;
-overflow-x:hidden;
-position:relative;
+padding:0;
+box-sizing:border-box;
 }
-  
-/* Invitation Frame */
-/*.invitation-frame {
-  max-width:900px;
-  margin:50px auto;
-  padding:30px;
-  border:6px solid #d4af37; /* Gold border */
- /* border-radius:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
-  background:rgba(255,255,255,0.95);
-  position:relative;
-  z-index:1;
-}*/
-  
-  
-/* HERO */
+
+body{
+background:linear-gradient(to bottom,#fffdf8,#ffffff);
+font-family:'Cormorant Garamond', serif;
+text-align:center;
+color:#2c2c2c;
+overflow-x:hidden;
+}
+
+/* ===== HERO ===== */
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-position:relative;
-z-index:1;
+padding:20px;
 }
 
 .hero h1{
 font-family:'Playfair Display', serif;
-font-size:70px;
-letter-spacing:3px;
-margin:0;
+font-size:58px;
+margin:10px 0;
 }
 
-.hero p{
-font-size:20px;
-letter-spacing:4px;
-text-transform:uppercase;
-color:#777;
-margin:0;
+.names{
+font-size:34px;
+margin-top:10px;
+font-family:'Playfair Display', serif;
 }
 
 .open-btn{
-margin-top:40px;
-padding:15px 45px;
-border:1px solid #d4af37;
-background:white;
-color:#d4af37;
-font-size:16px;
-letter-spacing:3px;
+margin-top:25px;
+padding:12px 30px;
+border:1px solid #c6a86b;
+background:#fff;
+color:#c6a86b;
 cursor:pointer;
-transition:0.3s;
-}
-
-.open-btn:hover{
-background:#d4af37;
-color:white;
-}
-
-/* Sections */
-.section{
-padding:80px 20px;
-max-width:850px;
-margin:auto;
-position:relative;
-z-index:1;
-}
-
-  .section-divider {
-    height : 1px;
-    width : 60%;
-    background: #d4af37;
-    margin : 50px auto 50px auto;
-    border-radius : 1px;
-  }
-.names{
-font-family:'Playfair Display', serif;
-font-size:48px;
 letter-spacing:2px;
-margin:40px 0;
+}
+
+/* ===== SECTIONS ===== */
+.section{
+padding:40px 20px;
+max-width:720px;
+margin:auto;
 }
 
 .divider{
-width:120px;
 height:1px;
-background:#d4af37;
-margin:40px auto;
+width:45%;
+background:#e6d6b0;
+margin:30px auto;
 }
 
-.details{
+/* ===== ARABIC ===== */
+.arabic{
+font-family:'Amiri', serif;
 font-size:22px;
+direction:rtl;
+color:#8e7d57;
 margin:10px 0;
-color:#4a4a4a;
+}
+
+.arabic-translation{
+font-size:14px;
+color:#999;
+margin-bottom:10px;
+}
+
+/* ===== DATE ===== */
+.date{
+font-size:22px;
+color:#8e7d57;
+margin-bottom:10px;
 }
 
 .countdown{
-font-size:26px;
-margin-top:20px;
+font-size:18px;
+letter-spacing:1px;
+color:#555;
 }
 
-/* Timeline */
+/* ===== TIMELINE ===== */
 .timeline{
-text-align:left;
-margin-top:50px;
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
 }
 
-.timeline div{
-margin-bottom:20px;
+/* ===== RSVP ===== */
+.rsvp{
+background:#fffdf8;
+border:1px solid #eadfbe;
+padding:25px;
+border-radius:10px;
 }
 
-/* RSVP */
-.rsvp input, .rsvp textarea{
+.rsvp input,.rsvp textarea{
 width:100%;
-padding:12px;
-margin:10px 0;
+padding:10px;
+margin:6px 0;
 border:1px solid #ddd;
-font-family:'Cormorant Garamond', serif;
 }
 
 .rsvp button{
-padding:14px 40px;
-background:#d4af37;
-border:none;
+background:#c6a86b;
 color:white;
-letter-spacing:2px;
+border:none;
+padding:12px;
 cursor:pointer;
 }
 
@@ -161,61 +136,95 @@ overflow:hidden;
 box-shadow:0 10px 35px rgba(0,0,0,0.15);
 }
 
-/* Floating Flowers */
+/* ===== FLOWERS ===== */
 .petal{
 position:fixed;
 top:-10%;
-opacity:0.5;
-animation:fall linear infinite;
+font-size:18px;
+opacity:0.7;
+animation:fall 8s linear;
+pointer-events:none;
 z-index:0;
 }
 
 @keyframes fall{
-0%{transform:translateY(-10vh) rotate(0deg);}
-100%{transform:translateY(110vh) rotate(360deg);}
+100%{transform:translateY(110vh);}
 }
+
 </style>
 </head>
 
 <body>
- <div class="invitation-frame">
-  
-  
-  
+
 <!-- HERO -->
 <div class="hero">
+
 <p>You are invited</p>
+
 <h1>Our Wedding</h1>
-<button class="open-btn" onclick="scrollToSection()">Open Invitation</button>
-</div>
-<div class="section-divider"></div>
-   
-<!-- Couple Names -->
-<div class="section">
+
 <div class="names">
-Marouen Khemiri<br>&<br>Yasmine Fehri
+Marouen Khemiri & Yasmine Fehri 
 </div>
+
+<button class="open-btn" onclick="scrollDown()">Open Invitation</button>
+
+</div>
+
 <div class="divider"></div>
+
+<!-- INVITATION -->
+<div class="section">
+
+<p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+<p class="arabic-translation">In the name of Allah, the Most Gracious, the Most Merciful</p>
+
+<p class="arabic">
+برفقة عائلتيهما، يتشرفان بدعوتكم لمشاركتهما الاحتفال بزواجهما
+</p>
+
 <p>Together with their families, they invite you to celebrate their marriage.</p>
+
 </div>
-<div class="section-divider"></div>
-<!-- Date -->
+
+<div class="divider"></div>
+
+<!-- DATE -->
 <div class="section">
-<h2>September 12, 2026</h2>
+
+<div class="date">
+September 12, 2026 · 5:00 PM
+</div>
+
 <div class="countdown" id="countdown"></div>
+
 </div>
-<div class="section-divider"></div>
-<!-- Timeline -->
+
+<div class="divider"></div>
+
+<!-- CELEBRATION -->
 <div class="section">
-<h2>Wedding Day</h2>
+
+<h2>The Celebration</h2>
+
+<p class="arabic">
+نحتفل معًا ببداية فصلٍ جديد من حياتنا
+</p>
+
+<p class="arabic-translation">
+We gather to celebrate the beginning of a new chapter
+</p>
+
 <div class="timeline">
-<div><b>5:00 PM</b> – Ceremony</div>
-<div><b>5:30 PM</b> – Cocktail Reception</div>
+<p><b>Ceremony</b> — 5:00 PM</p>
+<p><b>Cocktail Reception</b> — 5:30 PM</p>
 </div>
+
 </div>
-<div class="section-divider"></div>
-<!-- Location -->
-<div class="section">
+
+<div class="divider"></div>
+
+<!-- LOCATION -->
 <h2>Location</h2>
 <p>Hôtel de Ville de Tunis<br>La Kasbah, Tunisia</p>
 <div class="map">
@@ -229,53 +238,295 @@ src="https://www.google.com/maps?q=2 Rue du 2 Mars 1934, Tunis 1000&output=embed
 </iframe>
 </div>
 </div>
-<div class="section-divider"></div>
-<!-- RSVP Form (Formspree Integration) -->
+
+<div class="divider"></div>
+
+<!-- RSVP -->
 <div class="section rsvp">
+
 <h2>RSVP</h2>
+
 <form action="https://formspree.io/f/mlgpdzkd" method="POST">
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Email" required>
-<input type="number" name="guests" placeholder="Number of Guests" required>
+<input type="number" name="guests" placeholder="Guests" required>
 <textarea name="message" placeholder="Message"></textarea>
+
 <button type="submit">Confirm Attendance</button>
 </form>
+
 </div>
 
 <script>
-/* Smooth scroll */
-function scrollToSection(){window.scrollTo({top:window.innerHeight,behavior:'smooth'});}
 
-/* Countdown Timer */
-const weddingDate = new Date("June 20, 2027 16:00:00").getTime();
+/* smooth scroll */
+function scrollDown(){
+window.scrollTo({top:window.innerHeight,behavior:'smooth'});
+}
+
+/* countdown */
+const weddingDate = new Date("2026-09-12T17:00:00").getTime();
+
 setInterval(()=>{
 const now = new Date().getTime();
 const distance = weddingDate - now;
+
+if(distance <= 0){
+document.getElementById("countdown").innerHTML = "Today is the day 🤍";
+return;
+}
+
 const days = Math.floor(distance/(1000*60*60*24));
 const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-document.getElementById("countdown").innerHTML = days+" days "+hours+" hours "+minutes+" minutes";
+
+document.getElementById("countdown").innerHTML =
+days+" days · "+hours+" hours · "+minutes+" min";
 },1000);
 
-/* Floating Flowers */
-const petals=["❀","🌸","✿","💮"];
-function createPetal(){
-const p=document.createElement("div");
-p.classList.add("petal");
-p.innerHTML=petals[Math.floor(Math.random()*petals.length)];
-p.style.left=Math.random()*100+"vw";
-p.style.fontSize=(18+Math.random()*22)+"px";
-p.style.animationDuration=(20+Math.random()*20)+"s";
-p.style.color=["#fff","#f8e3e0","#d4af37","#c8d8c8"][Math.floor(Math.random()*4)];
-document.body.appendChild(p);
-setTimeout(()=>p.remove(),40000);
-}
-setInterval(createPetal,800);
+/* flowers */
+const flowers=["🌸","❀","🌷","✿"];
+
+setInterval(()=>{
+const f=document.createElement("div");
+f.className="petal";
+f.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+
+f.style.left=Math.random()*100+"vw";
+f.style.animationDuration=(6+Math.random()*6)+"s";
+
+document.body.appendChild(f);
+
+setTimeout(()=>f.remove(),8000);
+},500);
+
 </script>
 
 </body>
 </html>
-    
-  </body>
-  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@300;400&family=Amiri&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE ===== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(180deg,#fffdf8,#ffffff);
+font-family:'Cormorant Garamond', serif;
+text-align:center;
+color:#2b2b2b;
+overflow-x:hidden;
+}
+
+/* ===== FLOWERS (LUXURY SOFT) ===== */
+.petal{
+position:fixed;
+top:-10%;
+font-size:18px;
+opacity:0.65;
+animation:fall linear infinite;
+pointer-events:none;
+z-index:0;
+filter:blur(0.2px);
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* ===== HERO ===== */
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+position:relative;
+z-index:2;
+}
+
+.hero p{
+letter-spacing:3px;
+color:#8a8a8a;
+}
+
+.hero h1{
+font-family:'Playfair Display', serif;
+font-size:62px;
+margin:10px 0;
+color:#1f1f1f;
+}
+
+.names{
+font-family:'Playfair Display', serif;
+font-size:34px;
+margin-top:10px;
+color:#2b2b2b;
+}
+
+.open-btn{
+margin-top:28px;
+padding:12px 34px;
+border:1px solid #c6a86b;
+background:#fff;
+color:#c6a86b;
+letter-spacing:2px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.open-btn:hover{
+background:#c6a86b;
+color:#fff;
+}
+
+/* ===== SECTIONS ===== */
+.section{
+padding:45px 20px;
+max-width:750px;
+margin:auto;
+position:relative;
+z-index:2;
+}
+
+.divider{
+height:1px;
+width:42%;
+background:linear-gradient(to right,transparent,#e6d6b0,transparent);
+margin:35px auto;
+}
+
+/* ===== ARABIC ===== */
+.arabic{
+font-family:'Amiri', serif;
+font-size:24px;
+direction:rtl;
+color:#8e7d57;
+margin:12px 0;
+}
+
+.arabic-translation{
+font-size:14px;
+color:#9aa3a8;
+margin-bottom:12px;
+}
+
+/* ===== DATE ===== */
+.date{
+font-size:24px;
+color:#3a3a3a;
+margin-bottom:8px;
+letter-spacing:1px;
+}
+
+.countdown{
+font-size:18px;
+color:#8e7d57;
+letter-spacing:2px;
+}
+
+/* ===== CELEBRATION ===== */
+.timeline{
+margin-top:18px;
+font-size:18px;
+line-height:1.9;
+}
+
+/* ===== RSVP LUXURY BOX ===== */
+.rsvp{
+background:#fffdf8;
+border:1px solid #eadfbe;
+padding:32px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.rsvp h2{
+margin-bottom:10px;
+}
+
+.rsvp input,.rsvp textarea{
+width:100%;
+padding:11px;
+margin:7px 0;
+border:1px solid #ddd;
+font-family:'Cormorant Garamond';
+}
+
+.rsvp button{
+background:#c6a86b;
+color:white;
+border:none;
+padding:12px;
+width:100%;
+cursor:pointer;
+letter-spacing:1px;
+}
+
+/* subtle luxury spacing feel */
+.section p{
+margin:4px 0;
+/* scroll */
+function scrollDown(){
+window.scrollTo({top:window.innerHeight,behavior:'smooth'});
+}
+
+/* countdown */
+const weddingDate = new Date("2026-09-12T17:00:00").getTime();
+
+setInterval(()=>{
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+if(distance <= 0){
+document.getElementById("countdown").innerHTML = "Today is the day 🤍";
+return;
+}
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("countdown").innerHTML =
+days+" days · "+hours+" hrs · "+minutes+" min";
+},1000);
+
+/* luxury flowers */
+const flowers=["🌸","🌷","❀","✿"];
+
+setInterval(()=>{
+const f=document.createElement("div");
+f.className="petal";
+f.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+
+f.style.left=Math.random()*100+"vw";
+f.style.fontSize=(16+Math.random()*16)+"px";
+f.style.animationDuration=(8+Math.random()*6)+"s";
+
+f.style.color=["#f7c6d0","#ffffff","#e8d6c8","#f3b6c2"][Math.floor(Math.random()*4)];
+
+document.body.appendChild(f);
+setTimeout(()=>f.remove(),14000);
+
+},450);
+
+</script>
+
+</body>
 </html>
+
